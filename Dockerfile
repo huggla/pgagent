@@ -1,4 +1,4 @@
-FROM huggla/alpine-official:20180921-edge as alpine
+FROM huggla/alpine-official:20181017-edge as alpine
 
 ARG PGAGENTVERSION="4.0.0"
 ARG BUILDDEPS="postgresql-dev cmake gcc g++ libc-dev make boost-dev"
