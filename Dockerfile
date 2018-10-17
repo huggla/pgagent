@@ -12,8 +12,10 @@ RUN apk --no-cache add $BUILDDEPS \
  && make \
  && mkdir -p /pgagent/extension \
  && cp *.sql *.control sql/* /pgagent/extension/ \
+ && rm /pgagent/extension/pgagent.sql \
  && cp pgagent /pgagent/
  
  FROM scratch as image
  
- COPY --from=alpine /pgagent /
+ COPY --from=alpine /pgagent/pgagent /usr/local/bin/
+ COPY --from=alpine /pgagent/extension /usr/share/postgresql/
