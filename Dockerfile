@@ -17,5 +17,5 @@ RUN apk --no-cache add $BUILDDEPS \
  
  FROM scratch as image
  
- COPY --from=alpine /pgagent/pgagent /usr/local/bin/
- COPY --from=alpine /pgagent/extension /usr/share/postgresql/
+ COPY --from=alpine /pgagent/pgagent /usr/local/bin/pgagent
+ COPY --from=alpine /pgagent/extension /usr/share/postgresql/extension
