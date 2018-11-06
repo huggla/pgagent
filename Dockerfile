@@ -17,6 +17,6 @@ RUN apk --no-cache add $BUILDDEPS \
  && rm /pgagent/usr/share/postgresql/extension/pgagent.sql \
  && cp pgagent /pgagent/usr/local/bin/
  
- FROM scratch as image
+ FROM huggla/busybox:$TAG as image
  
  COPY --from=alpine /pgagent /pgagent
