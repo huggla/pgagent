@@ -1,4 +1,4 @@
-ARG TAG="20181106-edge"
+ARG TAG="20181108-edge"
 
 FROM huggla/alpine-official:$TAG as alpine
 
@@ -6,7 +6,7 @@ ARG PGAGENTVERSION="4.0.0"
 ARG BUILDDEPS="postgresql-dev cmake gcc g++ libc-dev make boost-dev"
 ARG DOWNLOAD="https://ftp.postgresql.org/pub/pgadmin/pgagent/pgAgent-$PGAGENTVERSION-Source.tar.gz"
 
-RUN apk --no-cache add $BUILDDEPS \
+RUN apk add $BUILDDEPS \
  && wget $DOWNLOAD \
  && tar -xvp -f pgAgent-$PGAGENTVERSION-Source.tar.gz \
  && cd pgAgent-$PGAGENTVERSION-Source \
