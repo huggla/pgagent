@@ -3,7 +3,7 @@ ARG TAG="20181113-edge"
 FROM huggla/alpine-official:$TAG as alpine
 
 ARG PGAGENTVERSION="4.0.0"
-ARG BUILDDEPS="postgresql-dev cmake gcc g++ libc-dev make boost-dev ssl_client"
+ARG BUILDDEPS="postgresql-dev cmake gcc g++ libc-dev make boost-dev ssl_client wget"
 ARG DOWNLOAD="https://ftp.postgresql.org/pub/pgadmin/pgagent/pgAgent-$PGAGENTVERSION-Source.tar.gz"
 
 RUN apk add $BUILDDEPS \
