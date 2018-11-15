@@ -12,10 +12,11 @@ RUN apk add $BUILDDEPS \
  && cd pgAgent-$PGAGENTVERSION-Source \
  && cmake -DCMAKE_INSTALL_PREFIX=/usr -DSTATIC_BUILD:BOOLEAN=FALSE \
  && make \
- && mkdir -p /pgagent/usr/share/postgresql/extension /pgagent/usr/bin \
- && cp *.sql *.control sql/* /pgagent/usr/share/postgresql/extension/ \
- && cp pgagent /pgagent/usr/bin/
+ && make install
+# && mkdir -p /pgagent/usr/share/postgresql/extension /pgagent/usr/bin \
+# && cp *.sql *.control sql/* /pgagent/usr/share/postgresql/extension/ \
+# && cp pgagent /pgagent/usr/bin/
  
- FROM huggla/busybox:$TAG as image
+# FROM huggla/busybox:$TAG as image
  
- COPY --from=alpine /pgagent /pgagent
+# COPY --from=alpine /pgagent /pgagent
