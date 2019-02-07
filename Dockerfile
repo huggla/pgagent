@@ -1,4 +1,4 @@
-ARG TAG="20190129"
+ARG TAG="20190206"
 
 FROM huggla/alpine-official as alpine
 
