@@ -1,6 +1,6 @@
-ARG TAG="20190220"
+ARG TAG="20190503"
 
-FROM huggla/alpine-official as alpine
+FROM huggla/alpine as alpine
 
 ARG PGAGENTVERSION="4.0.0"
 ARG BUILDDEPS="postgresql-dev cmake gcc g++ libc-dev make boost-dev ssl_client wget"
