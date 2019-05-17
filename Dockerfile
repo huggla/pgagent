@@ -1,4 +1,4 @@
-ARG TAG="20190503"
+ARG TAG="20190517"
 
 FROM huggla/alpine as alpine
 
@@ -18,4 +18,4 @@ RUN apk add $BUILDDEPS \
  
  FROM huggla/busybox:$TAG as image
  
- COPY --from=alpine /pgagent /pgagent
+ COPY --from=alpine /pgagent /app
